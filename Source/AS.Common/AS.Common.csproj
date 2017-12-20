@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AS.Common</RootNamespace>
     <AssemblyName>AS.Common</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +45,20 @@
       <Link>Properties\GlobalVersionInfo.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AS.Models\AS.Models.csproj">
+      <Project>{94ca8892-b5b8-4c52-8fbf-465f52349e4b}</Project>
+      <Name>AS.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AS.Repository\AS.Repository.csproj">
+      <Project>{c16bd932-7be2-4b9a-995b-6a3e35963cef}</Project>
+      <Name>AS.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AS.Utilities\AS.Utilities.csproj">
+      <Project>{d42a5bd7-d623-4d5a-b6d9-6e68b92acf08}</Project>
+      <Name>AS.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
