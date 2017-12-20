@@ -1,5 +1,5 @@
 ﻿
-CREATE PROCEDURE [dbo].[sp_CreateClassVBT] @tableName VARCHAR(100)
+CREATE PROCEDURE [dbo].[sp_CreateClassModel] @tableName VARCHAR(100)
 AS
 BEGIN
     SET NOCOUNT ON;
