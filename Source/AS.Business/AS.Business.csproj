@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,9 +45,36 @@
     <Compile Include="..\GlobalVersionInfo.cs">
       <Link>Properties\GlobalVersionInfo.cs</Link>
     </Compile>
+    <Compile Include="Abstractions\IActionBusiness.cs" />
+    <Compile Include="Abstractions\ICaptchaBusiness.cs" />
+    <Compile Include="Abstractions\IDefinitionBusiness.cs" />
+    <Compile Include="Abstractions\IGeneralBusiness.cs" />
+    <Compile Include="Abstractions\IHomeBusiness.cs" />
+    <Compile Include="Abstractions\ILoginBusiness.cs" />
+    <Compile Include="Abstractions\IMenuBusiness.cs" />
+    <Compile Include="Abstractions\IProfileBusiness.cs" />
+    <Compile Include="Abstractions\IRememberBusiness.cs" />
+    <Compile Include="Abstractions\IReportBusiness.cs" />
+    <Compile Include="Abstractions\IWebConfigBusiness.cs" />
+    <Compile Include="Helper\TypeHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\ActionBusiness.cs" />
+    <Compile Include="System\AuthenticationProvider.cs" />
+    <Compile Include="System\DatabaseLogProvider.cs" />
+    <Compile Include="System\DefinitionBusiness.cs" />
+    <Compile Include="System\GeneralBusiness.cs" />
+    <Compile Include="System\HomeBusiness.cs" />
+    <Compile Include="System\LoginBusiness.cs" />
+    <Compile Include="System\MenuBusiness.cs" />
+    <Compile Include="System\ProfileBusiness.cs" />
+    <Compile Include="System\ReportBusiness.cs" />
+    <Compile Include="System\VbtLogger.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AS.Common\AS.Common.csproj">
+      <Project>{c3f23ae7-3682-4352-bd1d-a45f6e02dbf8}</Project>
+      <Name>AS.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AS.Models\AS.Models.csproj">
       <Project>{94ca8892-b5b8-4c52-8fbf-465f52349e4b}</Project>
       <Name>AS.Models</Name>
@@ -59,6 +87,9 @@
       <Project>{d42a5bd7-d623-4d5a-b6d9-6e68b92acf08}</Project>
       <Name>AS.Utilities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

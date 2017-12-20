@@ -31,8 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.4\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.Contrib, Version=1.50.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.Contrib.1.50.4\lib\net451\Dapper.Contrib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,9 +51,27 @@
     <Compile Include="..\GlobalVersionInfo.cs">
       <Link>Properties\GlobalVersionInfo.cs</Link>
     </Compile>
+    <Compile Include="Abstractions\IActionRepository.cs" />
+    <Compile Include="Abstractions\ICaptchaRepository.cs" />
+    <Compile Include="Abstractions\IDefinitionRepository.cs" />
+    <Compile Include="Abstractions\IGeneralRepository.cs" />
+    <Compile Include="Abstractions\ILoginRepository.cs" />
+    <Compile Include="Abstractions\IMenuRepository.cs" />
+    <Compile Include="Abstractions\IReportRepository.cs" />
+    <Compile Include="Abstractions\IWebConfigRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\ActionRepository.cs" />
+    <Compile Include="System\DefinitionRepository.cs" />
+    <Compile Include="System\GeneralRepository.cs" />
+    <Compile Include="System\LoginRepository.cs" />
+    <Compile Include="System\MenuRepository.cs" />
+    <Compile Include="System\ReportRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AS.Common\AS.Common.csproj">
+      <Project>{c3f23ae7-3682-4352-bd1d-a45f6e02dbf8}</Project>
+      <Name>AS.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AS.Models\AS.Models.csproj">
       <Project>{94ca8892-b5b8-4c52-8fbf-465f52349e4b}</Project>
       <Name>AS.Models</Name>
@@ -55,6 +80,10 @@
       <Project>{d42a5bd7-d623-4d5a-b6d9-6e68b92acf08}</Project>
       <Name>AS.Utilities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
