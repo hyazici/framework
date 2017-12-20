@@ -1,0 +1,13 @@
+﻿
+CREATE PROCEDURE [dbo].[sp_SetContext] @prmIdUser INT
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	DECLARE @BINARY VARBINARY(100);
+
+	SET @BINARY = (
+			SELECT convert(VARBINARY, @prmIdUser)
+			);
+	SET CONTEXT_INFO @BINARY;
+END

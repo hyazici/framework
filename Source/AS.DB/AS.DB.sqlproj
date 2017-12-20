@@ -57,5 +57,41 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SchemaCompare-Local.scmp" />
+    <None Include="DATA.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\SC_USER.sql" />
+    <Build Include="dbo\Tables\SC_ROLE.sql" />
+    <Build Include="dbo\Tables\SC_MENU.sql" />
+    <Build Include="dbo\Tables\SC_LOG_TYPE.sql" />
+    <Build Include="dbo\Tables\SC_LOG.sql" />
+    <Build Include="dbo\Tables\SC_ACTION.sql" />
+    <Build Include="dbo\Tables\RP_REPORT.sql" />
+    <Build Include="dbo\Tables\GN_TABLE.sql" />
+    <Build Include="dbo\Tables\GN_COLUMN.sql" />
+    <Build Include="dbo\Tables\CR_USER_MENU.sql" />
+    <Build Include="dbo\Tables\CR_USER_ACTION.sql" />
+    <Build Include="dbo\Tables\CR_ROLE_USER.sql" />
+    <Build Include="dbo\Tables\CR_ROLE_MENU.sql" />
+    <Build Include="dbo\Tables\CR_ROLE_ACTION.sql" />
+    <Build Include="dbo\Views\VW_RP_Kullanıcı.sql" />
+    <Build Include="dbo\Views\VW_ROLE_USER.sql" />
+    <Build Include="dbo\Views\VW_LOG.sql" />
+    <Build Include="dbo\Views\VW_FIELD.sql" />
+    <Build Include="dbo\Functions\fn_ReadContext.sql" />
+    <Build Include="dbo\Functions\fn_ConvertToString.sql" />
+    <Build Include="dbo\Functions\fn_Menu.sql" />
+    <Build Include="dbo\Functions\fn_Action.sql" />
+    <Build Include="dbo\Stored Procedures\sp_SetContext.sql" />
+    <Build Include="dbo\Stored Procedures\sp_LogTablosuOlusturma.sql" />
+    <Build Include="dbo\Stored Procedures\sp_CreateClassModel.sql" />
   </ItemGroup>
 </Project>
